@@ -4,8 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Tracking</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello</h1>
+
+    <main class="grid">
+
+        <div class="card profile">
+            <div class="card__info">
+                <img src="/images/image-jeremy.png" alt="">
+                <h1><span>Report for</span>Jeremy Robson</h1>
+            </div>
+
+            <div id="timeframe" role="list" class="buttons">
+                <button id="daily">Daily</button>
+                <button id="weekly">Weekly</button>
+                <button id="monthly">Monthly</button>
+            </div>
+        </div>
+        <div class="card active" data-activity="work">
+            <div class="card__info">
+                <div class="flex space-between">
+                    <h2>Work</h2>
+                    <img src="/images/icon-ellipsis.svg" alt="">   
+                </div>
+                <div class="time">
+                    <span class="time-label--current"> 5hrs</span>
+                    <span class="time-label--previous">Previous - 7hrs</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-activity="play">
+            <div class="card__info">
+                <div class="flex space-between">
+                    <h2>Play</h2>
+                    <img src="/images/icon-ellipsis.svg" alt="">   
+                </div>
+                <div class="time">
+                    <span class="time-label--current"> 5hrs</span>
+                    <span class="time-label--previous">Previous - 7hrs</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-activity="study">
+            <div class="card__info">
+                <div class="flex space-between">
+                    <h2>Study</h2>
+                    <img src="/images/icon-ellipsis.svg" alt="">   
+                </div>
+                <div class="time">
+                    <span class="time-label--current"> 5hrs</span>
+                    <span class="time-label--previous">Previous - 7hrs</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-activity="exercise">
+            <div class="card__info">
+                <div class="flex space-between">
+                    <h2>Exercise</h2>
+                    <img src="/images/icon-ellipsis.svg" alt="">   
+                </div>
+                <div class="time">
+                    <span class="time-label--current"> 5hrs</span>
+                    <span class="time-label--previous">Previous - 7hrs</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-activity="social">
+            <div class="card__info">
+                <div class="flex space-between">
+                    <h2>Social</h2>
+                    <img src="/images/icon-ellipsis.svg" alt="">   
+                </div>
+                <div class="time">
+                    <span class="time-label--current"> 5hrs</span>
+                    <span class="time-label--previous">Previous - 7hrs</span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-activity="selfcare">
+            <div class="card__info">
+                <div class="flex space-between">
+                    <h2>Self Care</h2>
+                    <img src="/images/icon-ellipsis.svg" alt="">   
+                </div>
+                <div class="time">
+                    <span class="time-label--current"> 5hrs</span>
+                    <span class="time-label--previous">Previous - 7hrs</span>
+                </div>
+            </div>
+        </div>
+
+       
+    </main>
+    
+<script src="script.js"></script>
 </body>
 </html>

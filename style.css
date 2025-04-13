@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+    
+    /* Color Variables - Primitives */
+
+    --color-white: hsl(0, 100%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+
+    --color-navy-950: hsl(226, 43%, 10%);
+    --color-navy-900: hsl(235, 46%, 20%);
+    --color-navy-800: hsl(235, 41%, 34%);
+    --color-navy-200: hsl(236, 100%, 87%);
+
+    --color-orange-200: hsl(15, 100%, 70%);
+
+    --color-purple-700: hsl(264, 64%, 52%);
+    --color-purple-600: hsl(246, 80%, 60%);
+    --color-purple-500: hsl(235, 45%, 61%);
+
+    --color-blue-300:   hsl(195, 74%, 62%);
+    --color-pink-400:   hsl(348, 100%, 68%);
+    --color-green-400:  hsl(145, 58%, 55%);
+    --color-yellow-300: hsl(43, 84%, 65%);
+    --color-grey-200:   hsl(0, 0%, 85%);
+
+    /* Typography Variables - Primitives */
+
+    --text-preset-1-fs: 3.375rem;
+    --text-preset-1-fw: 300;
+    --text-preset-1-lh: 66px;
+    --text-preset-1-ls: 0;
+
+    --text-preset-2-fs: 2.5rem;
+    --text-preset-2-fw: 300;
+    --text-preset-2-lh: 47px;
+    --text-preset-2-ls: 0;
+
+    --text-preset-3-fs: 2rem;
+    --text-preset-3-fw: 300;
+    --text-preset-3-lh: 38px;
+    --text-preset-3-ls: 0;
+
+    --text-preset-4-fs: 1.5rem;
+    --text-preset-4-fw: 300;
+    --text-preset-4-lh: 28px;
+    --text-preset-4-ls: 0;
+
+    --text-preset-5-fs: 1.125rem;
+    --text-preset-5-fw-r: 400;
+    --text-preset-5-fw-m: 600;
+    --text-preset-5-lh: 21px;
+    --text-preset-5-ls: 0;
+
+    --text-preset-6-fs: 0.9375rem;
+    --text-preset-6-fw: 400;
+    --text-preset-6-lh: 18px;
+    --text-preset-6-ls: 0;
+
+    /* Typography Variables - Semantic */
+
+    --font-family: "Rubik", sans-serif;
+    --typography-base-font-size:   var(--text-preset-5-fs);
+    --typography-base-line-height: var(--text-preset-5-lh);
+    --typography-base-font-weight: var(--text-preset-5-fw-r);
+
+    /* Color Variables - Semantic */
+
+    --color-surface-base-dark:  var(--color-navy-950);
+    --color-surface-base-mild:  var(--color-navy-900);
+    --color-surface-base-light: var(--color-navy-800);
+
+    --color-surface-callout-blue:   var(--color-blue-300);
+    --color-surface-callout-pink:   var(--color-pink-400);
+    --color-surface-callout-orange: var(--color-orange-200);
+    --color-surface-callout-green:  var(--color-green-400);
+    --color-surface-callout-purple: var(--color-purple-600);
+    --color-surface-callout-yellow: var(--color-yellow-300);
+
+    /* Spacing Variables - Semantic */
+
+    --space-8 : .5rem;
+    --space-16 : 1rem;
+    --space-24 : 1.5rem;
+    --space-32 : 2rem;
+
+    --border-radius: 15px;
+
+}
+
+/* Resets */
+
+*, *::before, *:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light; 
+}
+
+body {
+    min-height: 100dvh;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+    height: fit-content;
+}
+
+h1, h2, h3, h4, h5 {
+    text-wrap: balance;
+}
+
+ul[role='list'] {
+    list-style: none;
+}
+
+/* Custom Styles */
+
+body { 
+    background-color: var(--color-navy-950);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-weight: 100;
+    display: grid;
+    place-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 203px;
+    grid-auto-rows: 166px;
+    padding-inline: var(--space-24);
+    place-self: center;
+    gap: var(--space-24);
+    width: 100%;
+
+    @media screen {
+        
+    }
+
+    @media (min-width:768px) {
+        max-width: calc(38.25rem + (var(--space-24) * 2));
+        grid-template-columns: repeat(3, 188px);
+        grid-template-rows: repeat(3,  213px);
+
+        .profile {
+            grid-column: span 3;
+        }
+    }
+
+    @media (min-width:1024px) {
+       grid-template-columns: repeat(4, 1fr); 
+       grid-template-rows: repeat(2,  244px);
+       max-width: calc(69.75rem + (var(--space-24) * 2));
+       gap: var(--space-32);
+
+       .profile {
+        grid-column: span 1;
+        grid-row: span 2;
+       }
+    }
+}
+
+/* Card Item */
+
+.card {
+    background-color: var(--color-surface-callout-pink);
+    border-radius: var(--border-radius);
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-position: top -12px right 12px;
+    background-repeat: no-repeat;
+
+    &:hover .card__info {
+        background-color: var(--color-surface-base-light);
+        height: 100%;
+    }
+}
+
+.card[data-activity="work"] { background-color: var(--color-surface-callout-orange); background-image: url('/images/icon-work.svg')}
+.card[data-activity="play"] { background-color: var(--color-surface-callout-blue); background-image: url('/images/icon-play.svg'); }
+.card[data-activity="study"] { background-color: var(--color-surface-callout-pink); background-image: url('/images/icon-study.svg'); }
+.card[data-activity="exercise"] { background-color: var(--color-surface-callout-green); background-image: url('/images/icon-exercise.svg'); }
+.card[data-activity="social"] { background-color: var(--color-surface-callout-purple); background-image: url('/images/icon-social.svg'); }
+.card[data-activity="selfcare"] { background-color: var(--color-surface-callout-yellow); background-image: url('/images/icon-self-care.svg'); }
+
+/* Style first car - Profile Card */
+
+.card:first-of-type  {
+    justify-content: flex-start;
+    background-color: var(--color-surface-base-mild);
+
+    .card__info {
+        background-color: var(--color-surface-callout-purple) ;
+        height: auto;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: var(--space-24);
+        align-items: center;
+
+        @media (min-width:1024px) {
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 354px;
+            gap: 40px;
+        }
+    }
+}
+
+.card__info {
+    background-color: var(--color-surface-base-mild);
+    border-radius: var(--border-radius);
+    padding-block: 1.5rem;
+    padding-inline: 1.25rem;
+    height: 122px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all.25s ease-in-out;
+    cursor: pointer;
+    
+
+    @media (min-width:768px) {
+        height: 180px;
+        flex-direction: column;
+    }
+
+    @media (min-width:1024px) {
+        height: 200px;
+    }
+}
+
+/* Labels */
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+
+    @media (min-width: 768px) {
+       flex-direction: column;
+       align-items: flex-start;
+    }
+}
+
+.time-label--current {
+
+    font-size: var(--text-preset-3-fs);
+    display: block;  
+
+    @media (min-width: 768px) {
+        font-size: var(--text-preset-1-fs); 
+    }
+   
+}
+
+.time-label--previous {
+    color: var(--color-navy-200);
+}
+
+/* Profile Card */
+
+.profile img {
+    width: 64px;
+    height: 64px;
+    border: 4px solid var(--color-white);
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+
+   @media (min-width:1024px) {
+    width: 78px;
+    height: 78px;
+   }
+}
+
+.profile h1 {
+    font-size: var(--text-preset-4-fs);
+    line-height: var(--text-preset-4-lh);
+    span {
+        font-size: var(--text-preset-6-fs);
+        line-height: var(--text-preset-6-lh);
+        display: block;
+        color: var(--color-navy-200);
+    }
+
+    @media (min-width:1024px) {
+        font-size: var(--text-preset-2-fs);
+        line-height: var(--text-preset-2-lh);
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+
+    @media (min-width:1024px) {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-inline-start: 1rem; 
+        justify-content: center;
+        gap: 0;
+    }
+
+    button {
+        flex: 1;
+        background-color: transparent;
+        border: none;
+        padding: .5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-purple-500);
+
+        &.active {
+            color: var(--color-white);
+        }
+
+        @media (min-width:1024px) {
+            flex:none;
+        }
+    }
+}
