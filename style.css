@@ -198,12 +198,12 @@ body {
     }
 }
 
-.card[data-activity="work"] { background-color: var(--color-surface-callout-orange); background-image: url('/images/icon-work.svg')}
-.card[data-activity="play"] { background-color: var(--color-surface-callout-blue); background-image: url('/images/icon-play.svg'); }
-.card[data-activity="study"] { background-color: var(--color-surface-callout-pink); background-image: url('/images/icon-study.svg'); }
-.card[data-activity="exercise"] { background-color: var(--color-surface-callout-green); background-image: url('/images/icon-exercise.svg'); }
-.card[data-activity="social"] { background-color: var(--color-surface-callout-purple); background-image: url('/images/icon-social.svg'); }
-.card[data-activity="selfcare"] { background-color: var(--color-surface-callout-yellow); background-image: url('/images/icon-self-care.svg'); }
+.card[data-activity="work"] { background-color: var(--color-surface-callout-orange); background-image: url('images/icon-work.svg')}
+.card[data-activity="play"] { background-color: var(--color-surface-callout-blue); background-image: url('images/icon-play.svg'); }
+.card[data-activity="study"] { background-color: var(--color-surface-callout-pink); background-image: url('images/icon-study.svg'); }
+.card[data-activity="exercise"] { background-color: var(--color-surface-callout-green); background-image: url('images/icon-exercise.svg'); }
+.card[data-activity="social"] { background-color: var(--color-surface-callout-purple); background-image: url('images/icon-social.svg'); }
+.card[data-activity="selfcare"] { background-color: var(--color-surface-callout-yellow); background-image: url('images/icon-self-care.svg'); }
 
 /* Style first car - Profile Card */
 
