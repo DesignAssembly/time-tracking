@@ -4,16 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
       weekly: document.getElementById("weekly"),
       monthly: document.getElementById("monthly"),
     };
-
-    console.log(buttons)
-  
     class TimeCard {
       constructor(el) {
         this.activity = el.dataset.activity;
         this.currentEl = el.querySelector(".time-label--current");
         this.previousEl = el.querySelector(".time-label--previous");
       }
-  
       update(data, label) {
         this.currentEl.textContent = `${data.current}hrs`;
         this.previousEl.textContent = `${label} - ${data.previous}hrs`;
@@ -21,32 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     const cards = {};
-    console.log(cards);
     document.querySelectorAll(".card").forEach((el) => {
         const activityRaw = el.dataset.activity;
         if (!activityRaw) return; // 🛑 Skip if not a time tracking card
-      
         const activity = activityRaw.toLowerCase().replace(/\s+/g, "");
         cards[activity] = new TimeCard(el);
       });
   
     let timedata = [];
-  
     async function fetchData() {
       try {
         const response = await fetch("data.json");
-       
         if (!response.ok) throw new Error(`Error: ${response.status}`);
         timedata = await response.json();
-        console.log(response)
         updateDashboard("weekly");
       } catch (err) {
         console.error("Fetch failed:", err);
       }
     }
-  
     function updateDashboard(timeframe) {
-        console.log(timedata);
       if (!timedata.length) return;
   
       Object.values(buttons).forEach((btn) => btn.classList.remove("active"));
